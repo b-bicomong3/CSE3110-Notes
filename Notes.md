@@ -1,10 +1,18 @@
 # CSE3110 Iterative Algorithms
+
 ## Iterative algorithms
-Iterative algorithms are algorithms that use loops to process large sets of data this includes while loops and for loops. In contrast, Recursive Algorithms are algorithms that call the same algorithm over and over again to process large set of data. Iterative Algorithms tend to be easier to design, but increase in efficiency when using recursive algorithms.
+
+Iterative algorithms are algorithms that use loops to process large sets of data this includes while loops and for
+loops. In contrast, Recursive Algorithms are algorithms that call the same algorithm over and over again to process
+large set of data. Iterative Algorithms tend to be easier to design, but increase in efficiency when using recursive
+algorithms.
 
 Iterative algorithms are easily shown in search and sort algorithms.
+
 ### Linear Search
-Linear search is the easiest to program, but least efficient method of search. It processes the data line by line, similar to brute force decryption algorithms when cracking passwords.
+
+Linear search is the easiest to program, but least efficient method of search. It processes the data line by line,
+similar to brute force decryption algorithms when cracking passwords.
 
 ```python
 FOUND = False
@@ -14,10 +22,43 @@ for i in range(len(LIST)):
         break
 ```
 
-Linear search processing time is dependent on the length of the array and the value's placement in the array. Arrays that are 10000 indices or higher can have a noticeable time requirement to process.
+Linear search processing time is dependent on the length of the array and the value's placement in the array. Arrays
+that are 10000 indices or higher can have a noticeable time requirement to process.
 
 ### Measuring processing time
+
 we use ```time.perf_counter()``` to measure the overall time taken between processing data.
 
-For more accurate results, we use the average of at least 3- trials and then use ```statistics.mean()``` to find the average.
+For more accurate results, we use the average of at least 3- trials and then use ```statistics.mean()``` to find the
+average.
 
+### Binary Search
+
+Binary Search follows the _divide and conquer_ technique of finding a value. It takes an __ordered__ set of data and
+tests the midpoint. Then it cuts the list in half and reruns the process.
+
+**Steps for Binary Search**
+
+1. Determine the Midpoint of the list.
+2. Test if the Midpoint is the found value.
+    1. If the Midpoint is the found value, end
+    2. If the value is larger than the midpoint, redefine the lowest value of the list to be one above the midpoint.
+    3. If the value is smaller than the midpoint, redefine the largest value of the list to be one below the midpoint.
+3. Repeat until the value is found
+
+* Advantages of Binary Search
+    * It is significantly faster than linear search
+* Disadvantages of Binary Search
+    * List Must already be sorted from smallest to largest
+    * List must only contain integers or floats
+    * Harder to program
+
+### Sorting Data
+
+Just like searching algorithms, sorting algorithms have varying levels of efficiency. There are several types of sort
+algorithms including bubble, selection, insertion, and merge. (Python uses Timsort, which is a hybrid od merge and
+insertion sort designed by Time Peters in 2002) 
+
+### Bubble Sort
+Bubble sort compares two adjacent values on the list and arranges them from lowest to highest. Then it moves to the next index pair and repeats until it reaches the end of the unsorted list. The final index is the value that is sorted and the algorithm repeats until each index (traversed tail-to-head) is sorted.
+Advantages are that it is easy to program and takes less memory, but the disadvantages are that its processing time is directly proportional to the length of the data set. However, the set is often fully sorted before the last iteration. 
