@@ -57,8 +57,22 @@ tests the midpoint. Then it cuts the list in half and reruns the process.
 
 Just like searching algorithms, sorting algorithms have varying levels of efficiency. There are several types of sort
 algorithms including bubble, selection, insertion, and merge. (Python uses Timsort, which is a hybrid od merge and
-insertion sort designed by Time Peters in 2002) 
+insertion sort designed by Time Peters in 2002)
 
 ### Bubble Sort
-Bubble sort compares two adjacent values on the list and arranges them from lowest to highest. Then it moves to the next index pair and repeats until it reaches the end of the unsorted list. The final index is the value that is sorted and the algorithm repeats until each index (traversed tail-to-head) is sorted.
-Advantages are that it is easy to program and takes less memory, but the disadvantages are that its processing time is directly proportional to the length of the data set. However, the set is often fully sorted before the last iteration. 
+
+Bubble sort compares two adjacent values on the list and arranges them from lowest to highest. Then it moves to the next
+index pair and repeats until it reaches the end of the unsorted list. The final index is the value that is sorted and
+the algorithm repeats until each index (traversed tail-to-head) is sorted.
+Advantages are that it is easy to program and takes less memory, but the disadvantages are that its processing time is
+directly proportional to the length of the data set. However, the set is often fully sorted before the last iteration.
+
+| 1 | 5 | 3 | 19 | 11 | 17 | 7 | 13 |
+| --- | --- | --- | --- | --- | - - | --- | --- |
+| 1 | 3 | 5 | 11 | 17 | 7 | 13 | __19__ |
+| 1 | 3 | 5 | 11 | 7 | 13 | __17__ | 19 |
+| 1 | 3 | 5 | 7 | 11 | __13__ | 17 | 19 |
+| 1 | 3 | 5 | 7 | __11__ | 13 | 17 | 19 |
+| 1 | 3 | 5 | __7__ | 11 | 13 | 17 | 19 |
+| 1 | 3 | __5__ | 7 | 11 | 13 | 17 | 19 |
+| 1 | __3__ | 5 | 7 | 11 | 13 | 17 | 19 |
