@@ -68,7 +68,7 @@ Advantages are that it is easy to program and takes less memory, but the disadva
 directly proportional to the length of the data set. However, the set is often fully sorted before the last iteration.
 
 | 1 | 5 | 3 | 19 | 11 | 17     | 7 | 13 |
-| --- | --- | --- | --- | --- |--------| --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | 3 | 5 | 11 | 17 | 7      | 13 | __19__ |
 | 1 | 3 | 5 | 11 | 7 | 13     | __17__ | 19 |
 | 1 | 3 | 5 | 7 | 11 | __13__ | 17 | 19 |
@@ -76,3 +76,19 @@ directly proportional to the length of the data set. However, the set is often f
 | 1 | 3 | 5 | __7__ | 11 | 13     | 17 | 19 |
 | 1 | 3 | __5__ | 7 | 11 | 13     | 17 | 19 |
 | 1 | __3__ | 5 | 7 | 11 | 13     | 17 | 19 |
+
+### Selection Sort
+
+Selection sort compares the current index value with the rest of the set. It will find the lowest value and switch
+positions with the lowest index position of the unsorted half of the list. As it runs through the data set, it will
+select the lowest values and place them in the lower positions on the list.
+
+| 1       | 5 | 3 | 19 | 11 | 17 | 7 | 13 |
+|---------| --- | --- | --- | --- | --- | --- |---|
+| __*1*__ | 5 | 3 | 19 | 11 | 17 | 7 | 13 |
+| 1       | __3__ | _5_ | 19 | 11 | 17 | 7 | 13 |
+| 1       | 3 | __*5*__ | 19 | 11 | 17 | 7 | 13 |
+| 1       | 3 | 5 | __7__ | 11 | 17 | _19_ | 13 |
+| 1       | 3 | 5 | 7 | __*11*__ | 17 | 7 | 13 |
+| 1       | 3 | 5 | 19 | 11 | __13__ | 7 | _17_ |
+| 1       | 3 | 5 | 7 | 11 | 13 | __17__ | _19_ |
