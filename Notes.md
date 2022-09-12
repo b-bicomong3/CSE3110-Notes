@@ -92,3 +92,87 @@ select the lowest values and place them in the lower positions on the list.
 | 1       | 3 | 5 | 7 | __*11*__ | 17 | 7 | 13 |
 | 1       | 3 | 5 | 19 | 11 | __13__ | 7 | _17_ |
 | 1       | 3 | 5 | 7 | 11 | 13 | __17__ | _19_ |
+
+### Insertion
+
+Insertion sort splits the list into two sections; sorted and unsorted. As it progresses through the list, it takes the
+value at the lowest index of the unsorted half of the list and places it in the correct relative location in the sorted
+section og the list.
+
+| 1 | 5 | 3 | 19 | 11 | 17 | 7 | 13 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| __*1*__ | 5 | 3 | 19 | 11 | 17 | 7 | 13 |
+| 1 | __*5*__ | 3 | 19 | 11 | 17 | 7 | 13 |
+| 1 | _3_ | __5__ | 19 | 11 | 17 | 7 | 13 |
+| 1 | 3 | 5 | __*19*__ | 11 | 17 | 7 | 13 |
+| 1 | 3 | 5 | _11_ | __19__ | 17 | 7 | 13 |
+| 1 | 3 | 5 | 11 | _17_ | __19__ | 7 | 13 |
+| 1 | 3 | 5 | _7_ | 11 | 17 | __19__ | 13 |
+| 1 | 3 | 5 | 7 | 11 | _13_ | 17 | __19__ |
+
+# CSE3310 - Recursive Algorithm Notes
+
+A __recursive algorithm__ calls itself with smaller or simpler input values. Recursive algorithm have a _base case_,
+which is the simplest input value. Then there are subprocesses that simplifies more complex input values and returns the
+simplified values to the same function.
+
+All iterative algorithms can ve written recursively and vice verse; however, certain functions are easier to write in
+one form over the other.
+
+### Example 1: Testing for correct input
+
+```python
+# iterative
+def chckInt(x):
+    while True:
+        if x.isnumeric():
+            return int(x)
+        else:
+            print("You did not enter a number.")
+            x = input("Enter a number: ")
+
+
+# recursive
+def chckInt(x):
+    if x.isnumeric():
+        # base case
+        return (x)
+    else:
+        print("You did not enter a number: ")
+        return chckInt(input("Enter a number: "))  # updates x and returns it into the function
+```
+
+### Iteration vs. Recursion
+
+In general, iterative algorithms require more lines of code and more variables. It relies on while and for loops to
+complete the process. Whereas, recursive algorithms do not use as many variables or loops because return values are
+re-entered into a new instance of the same function. Therefore, recursion requires more physical memory than iterative
+algorithms because each instance of the recursive function stays in memory until the base case is achieved.
+
+Iterative algorithms tend to be faster than exclusively recursive algorithms; however, hybrid algorithms that are use
+both can be faster than exclusively iterative algorithms.
+
+## Example 2: Factorials
+
+### Calculate 7!
+
+7! = 7 * 6 * 5 * 4 * 3 * 2 * 1 * 1
+
+But...
+
+6! = 6 * 5 * 4 * 3 * 2 * 1 * 1
+
+Thus, we can rewrite 7! as,
+
+7! = 7 * 6!
+
+Going onwards,
+
+7! = 7 * (6 * (5 * (4 * (3 * (2 * (1 * (1)))))))
+
+Generalize Factorials as,
+
+```
+f(x) = x * (f(x-1)), x > 0
+     = 1, x = 0 // base case
+```
