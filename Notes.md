@@ -176,3 +176,6 @@ Generalize Factorials as,
 f(x) = x * (f(x-1)), x > 0
      = 1, x = 0 // base case
 ```
+
+### Sorting 
+Recursive sorting uses both recursive and iterative processes. In general these hybrid sorts are exponentially faster. (Measured in the logarithmic scale to be linear.)
