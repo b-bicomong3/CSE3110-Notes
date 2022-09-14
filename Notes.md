@@ -179,5 +179,3 @@ f(x) = x * (f(x-1)), x > 0
 
 ### Sorting 
 Recursive sorting uses both recursive and iterative processes. In general these hybrid sorts are exponentially faster. (Measured in the logarithmic scale to be linear.)
-
-Physics is the best class ever!
